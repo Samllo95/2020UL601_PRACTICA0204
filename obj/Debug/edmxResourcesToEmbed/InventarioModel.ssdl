@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Inventarios02Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="categoria">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="categoria" Type="varchar" MaxLength="75" />
+    <Property Name="estado" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="color">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="color" Type="varchar" MaxLength="75" />
+    <Property Name="estado" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="producto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="producto" Type="varchar" MaxLength="150" />
+    <Property Name="categoria" Type="varchar" MaxLength="75" />
+    <Property Name="precio" Type="numeric" Precision="18" Scale="4" />
+    <Property Name="estado" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="talla">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="talla" Type="varchar" MaxLength="2" />
+    <Property Name="estado" Type="char" MaxLength="5" />
+  </EntityType>
+  <EntityContainer Name="Inventarios02ModelStoreContainer">
+    <EntitySet Name="categoria" EntityType="Self.categoria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="color" EntityType="Self.color" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="talla" EntityType="Self.talla" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
